@@ -1,0 +1,20 @@
+{
+	"connexion": {
+		"host": "192.168.1.3",
+		"port": 4300,
+		"username": "myuser",
+		"password": "mysecret"
+	},
+  	"advanced": {
+  		"enableDebug": true,
+  		"cSymbol": "D19033",
+  		"cSymbolAddon": "i",
+  		"shcVersion": "2.19.7",
+  		"shApiVersion": "2.15"
+  	},
+    "mqtt": {
+        "url": "mqtt://broker.example.com",
+        "username": "myusername",
+        "password": "mypassword"
+    }
+}

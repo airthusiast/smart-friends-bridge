@@ -1,0 +1,23 @@
+{
+  "name": "smart-friends-bridge",
+  "version": "1.0.0",
+  "description": "Smart Friends Bridge",
+  "main": "main.js",
+  "author": "Airthusiast",
+  "license": "MIT",
+  "dependencies": {
+    "mqtt": "^4.2.6",
+    "schellenbergapi": "git+https://github.com/airthusiast/SchellenbergApi.git#master"
+  },
+  "scripts": {
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airthusiast/smart-friends-bridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/airthusiast/smart-friends-bridge/issues"
+  },
+  "homepage": "https://github.com/airthusiast/smart-friends-bridge#readme"
+}
