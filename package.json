@@ -1,12 +1,17 @@
 {
   "name": "smart-friends-bridge",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Smart Friends Bridge",
   "main": "main.js",
   "author": "Airthusiast",
   "license": "MIT",
   "dependencies": {
+    "datatables.net": "^1.10.23",
+    "datatables.net-dt": "^1.10.23",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
     "mqtt": "^4.2.6",
+    "pug": "^3.0.0",
     "schellenbergapi": "git+https://github.com/airthusiast/SchellenbergApi.git#master"
   },
   "scripts": {

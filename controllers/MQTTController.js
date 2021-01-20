@@ -79,12 +79,12 @@ class MQTTController {
     );
 
     this.apiConnector.api.on("newDI", (data) => {
-      console.info("Device found:");
-      console.info(" > deviceID:          " + data.deviceID);
-      console.info(" > masterDeviceID  :  " + data.masterDeviceID);
-      console.info(" > masterDeviceName:  " + data.masterDeviceName);
-      console.info(" > deviceName:        " + data.deviceName);
-      console.info(" > deviceDesignation: " + data.deviceDesignation);
+      this.logService.debug("Device found:");
+      this.logService.debug(" > deviceID:          " + data.deviceID);
+      this.logService.debug(" > masterDeviceID  :  " + data.masterDeviceID);
+      this.logService.debug(" > masterDeviceName:  " + data.masterDeviceName);
+      this.logService.debug(" > deviceName:        " + data.deviceName);
+      this.logService.debug(" > deviceDesignation: " + data.deviceDesignation);
     });
   }
 

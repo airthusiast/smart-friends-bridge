@@ -9,6 +9,7 @@
 const FileSystem = require('fs');
 const Path = require("path");
 const MQTTController = require('./controllers/MQTTController')
+const WebController = require('./controllers/WebController')
 const args = process.argv.slice(2)
 
 // Load config from provided config file
@@ -44,8 +45,14 @@ let myConfig = {
         url: config.mqtt.url,
         username: config.mqtt.username,
         password: config.mqtt.password
+    },
+    web: {
+        port: config?.web?.port || 80
     }
 };
 
 // Start MQTT Controller
 var mqtt = new MQTTController(myConfig);
+
+// Start web server
+var mqtt = new WebController(myConfig);

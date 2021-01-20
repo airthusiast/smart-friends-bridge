@@ -16,5 +16,8 @@
         "url": "mqtt://broker.example.com",
         "username": "myusername",
         "password": "mypassword"
+    },
+    "web": {
+        "port": 8080
     }
 }

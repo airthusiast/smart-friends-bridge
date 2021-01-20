@@ -51,6 +51,9 @@ Detailled information on how to setup MQTT on Hassio is available [here](https:/
         "url": "mqtt://broker.url", #--> MQTT URL
         "username": "myusername", #----> MQTT Broker username
         "password": "mypassword" #-----> MQTT Broker password
+      },
+      "web": {
+        "port": 8080 #-------------------> Embedded web server listening port, exposing device list
       }
   }
   ```
@@ -67,22 +70,17 @@ Detailled information on how to setup MQTT on Hassio is available [here](https:/
 
 ### Collect devices ID's
 
-Device ID's **are important**, they will be used to interact with the device itself.
+Device ID's **are important**, they will be used to interact with the devices.
 
-Once connection successfully established to the Box, the console will output a complete list of all the devices found in the box.
-The output looks like this:
+Once Smart Friends Bridge is started, the complete list of devices will available on a simple web page:
+
+> http://localhost:8080
+
+The embedded web server will be listening on the configured port: ```config.web.port```
+
+Optional: If debug mode is enabled, the device list will be printed in the console as well: 
 
 ```bash
-Device found:
-> deviceID:          11223
-> masterDeviceID  :  0
-> masterDeviceName:  undefined
-> deviceName:        Serverstatus
-> deviceDesignation: Serverstatus
-Device found:
-> deviceID:          9589
-> deviceName:        SH1-Box
-> deviceDesignation: pushNotification
 Device found:
 > deviceID:          3079 #-------------> Example: Device ID of a roller shutter
 > masterDeviceID  :  5243
@@ -100,8 +98,6 @@ Device found:
 ...
 ```
 Write them down, you will need them in the next step!
-
-**Note:** If debug mode is enabled you will see much more output. If it's too verbose, simply disable it.
 
 ##### Information about devices IDs
 A physical device can have multiple devices within Smart Friends. They are all grouped by MasterDeviceID:

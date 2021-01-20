@@ -39,6 +39,15 @@ class SchellenbergAPIConnector {
         // Send command
         return this.api.handler.setDeviceValue(deviceID, value);
     }
+
+   /**
+     * Calls Schellenberg API and retieves the device info map.
+     *
+     * @returns {map} device info map
+     */
+    getDeviceMap() {
+        return this.api.dataStore.deviceMap;
+    }
 }
 
 class SchellenbergAPIConnectorSingleton {

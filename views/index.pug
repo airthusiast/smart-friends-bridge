@@ -1,0 +1,31 @@
+doctype=html
+html
+    head
+        title Smart Friends Bridge
+        script(src='jquery/jquery.min.js')
+        script(src='datatables/js/jquery.dataTables.min.js')
+        script(src='datatables-dt/js/dataTables.dataTables.min.js')
+        link(rel='stylesheet', href='datatables-dt/css/jquery.dataTables.min.css')
+        style
+            include ../public/css/style.css
+    body
+        h1 Smart Friends Bridge
+        h2 Device list
+        table(style='width:100%', id='device-list', class='display')
+            thead
+                tr
+                    th deviceID
+                    th deviceName
+                    th deviceDesignation
+                    th masterDeviceID
+                    th masterDeviceName
+            tbody
+                each data, deviceId in deviceMap
+                    tr
+                        td #{data.deviceID}
+                        td #{data.deviceName}
+                        td #{data.deviceDesignation}
+                        td #{data.masterDeviceID}
+                        td #{data.masterDeviceName}
+        script.
+            $(document).ready( function () { $('#device-list').DataTable( { "pageLength": 50 });} );
