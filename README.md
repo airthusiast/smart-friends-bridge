@@ -68,11 +68,11 @@ Detailled information on how to setup MQTT on Hassio is available [here](https:/
   node smart-friends-bridge myconfig.json # myconfig.json is your personal config file created above
   ```
 
-### Collect devices ID's
+### Collect device ID's
 
 Device ID's **are important**, they will be used to interact with the devices.
 
-Once Smart Friends Bridge is started, the complete list of devices will available on a simple web page:
+Once Smart Friends Bridge is started, the complete list of devices will be available on a simple web page:
 
 > http://localhost:8080
 
