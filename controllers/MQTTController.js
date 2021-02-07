@@ -8,7 +8,7 @@
 
 const mqtt = require("mqtt");
 const SchellenbergAPIConnector = require("../services/SchellenbergAPIConnector");
-const LogService = require('schellenbergapi/Service/LogService');
+const LogService = require("schellenbergapi/Service/LogService");
 
 class MQTTController {
   /**
@@ -95,7 +95,11 @@ class MQTTController {
    * @param {string} value the new device value to set
    */
   processDeviceUpdate(deviceID, newValue) {
-    newValue = newValue.toString();
+    try {
+      newValue = JSON.parse(newValue.toString());
+    } catch (e) {
+      newValue = newValue.toString();
+    }
     return this.apiConnector.setDeviceValue(deviceID, newValue);
   }
 
@@ -109,16 +113,13 @@ class MQTTController {
     if (deviceID !== "" && value !== "") {
       var topic = "schellenberg/device/value/" + deviceID;
       var message;
-      console.log(topic + " => " + value);
-      if (value.toString().substr(0, 1) == "[") {
-        // Handle as JSON
+      try{
         message = JSON.stringify(value);
-      } else {
+      } catch (e) {
         message = value.toString();
       }
 
-      console.log(topic + " => " + message);
-
+      this.logService.debug(topic + " => " + message, "MQTTController");
       var options = { retain: true, qos: 0 };
       this.client.publish(topic, message, options);
     }
